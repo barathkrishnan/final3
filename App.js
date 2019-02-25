@@ -44,6 +44,7 @@ constructor(props) {
           value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
           placeholder={'Username or Mail-ID'}
+          underlineColorAndroid="transparent"
           placeholderTextColor='black'
           keyboardType='email-address'
           style={styles.input}
@@ -54,6 +55,7 @@ constructor(props) {
           placeholder={'Password'}
            placeholderTextColor='black'
           secureTextEntry={true}
+          underlineColorAndroid="transparent"
           style={styles.input}
         />
         <View style={styles.btnContainer}  >
