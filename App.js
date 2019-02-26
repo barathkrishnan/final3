@@ -118,7 +118,7 @@ state = {
       messages: [
         {
           _id: 1,
-          text: 'Welcome',
+          text: 'Hello This is Watson How can I help you?',
           
           createdAt: new Date(),
           user: {
