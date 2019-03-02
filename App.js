@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, Alert, Navigator,Button,ImageBackground, TextInput, View, StyleSheet,Image,KeyboardAvoidingView,StatusBar,SafeAreaView,TouchableOpacity } from 'react-native';
-import { GiftedChat,Day,InputToolbar } from 'react-native-gifted-chat';
+import { GiftedChat,Day,InputToolbar,Bubble } from 'react-native-gifted-chat';
 import { createStackNavigator } from 'react-navigation';
 
 export default class App extends React.Component {
@@ -88,7 +88,7 @@ class ScreenComponentTwo extends React.Component {
     headerTitle:'Chattee',
      headerRight: (<View />),
     headerStyle: {
-      backgroundColor: '#00565C',
+      backgroundColor: '#0153A5',
     },
     headerTintColor: '#fff',
   };
@@ -210,18 +210,45 @@ state = {
  renderInputToolbar (props) {
      //Add the extra styles via containerStyle
     return <InputToolbar {...props} containerStyle={{}} />
+  }renderBubble (props) {
+    return (
+       <Bubble
+        {...props}
+          wrapperStyle={{
+            left: {
+              backgroundColor: "transparent",
+            
+            },
+            right: {
+              backgroundColor: "transparent",
+              
+            }
+          }}
+          textStyle={{
+            right: {
+              color: "black",
+            },
+            left: {
+              color: "black",
+            }
+          }}
+      />
+    )
   }
+  
   render() {
     return (
-      <ImageBackground source={require('./abc.jpg')}
+      <ImageBackground source={require('./kan1.png')}
       style={styles.container}>
-      <View style={{flex:6,width:366}}>
-        <View  style={{flex:1}}>
+      <View style={{flex:6,width:366,}}>
+        <View  style={{flex:1,}}>
       <GiftedChat
-       listViewProps={ { contentContainerStyle: {'flexGrow': 1, 'justifyContent': 'flex-end' } } }
+       listViewProps={ { contentContainerStyle: {'flexGrow': 1, 'justifyContent': 'flex-end', } } }
         messages={this.state.messages}
          onSend={messages => this.onSend(messages)}
+          renderBubble={this.renderBubble}
          renderInputToolbar={this.renderInputToolbar}
+         
          // textInputProps={{autoFocus: true,color: 'white'}}
          //textProps={{ style: { color: 'red' } }}
          renderDay1={this.renderDay1}
@@ -230,7 +257,7 @@ state = {
         }}
         //renderDay={this.renderDay}
       />
-       <KeyboardAvoidingView behavior={'padding'} keyboardVerticalOffset={90}/>
+       <KeyboardAvoidingView behavior={'padding'} keyboardVerticalOffset={80}/>
         </View>
       </View>
       </ImageBackground>
