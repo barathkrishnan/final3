@@ -212,21 +212,21 @@ state = {
     return <InputToolbar {...props} containerStyle={{}} />
   }renderBubble (props) {
     return (
-       <Bubble
+      <Bubble
         {...props}
           wrapperStyle={{
             left: {
-              backgroundColor: "transparent",
+              backgroundColor: "white",
             
             },
             right: {
-              backgroundColor: "transparent",
+              backgroundColor: "#0153A5",
               
             }
           }}
           textStyle={{
             right: {
-              color: "black",
+              color: "white",
             },
             left: {
               color: "black",
